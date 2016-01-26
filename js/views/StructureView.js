@@ -8,16 +8,19 @@ define(function (require) {
         constructorName: "StructureView",
         id: "main",
         events: {
-            "tap #nav1": "myView",
-            "tap #nav2": "map",
-            "tap #nav3": "home",
-            "tap #mymenu": "show_hide_menu",
-            "tap #btn-offerte": "show_offerte",
-            "tap #btn-richieste": "show_richieste"
+            "click #mymenu": "show_hide_menu",
+            "click #backButton": "goBack",
+            "click #btn-offerte": "show_offerte",
+            "click #btn-richieste": "show_richieste",
+            "click #icoHome": "home",
+            "click #icoProfilo": "profilo",
+            "click #icoImpostazioni": "show_modificaProfilo",
+            "click #buttonCreaAnnuncio": "show_creaAnnuncio"
         },
         initialize: function (options) {
             // load the precompiled template
             this.template = Utils.templates.structure;
+            this.$icoHome = $("#icoHome");
             //this.on("inTheDOM", this.rendered);
             // bind the back event to the goBack function
             //document.getElementById("back").addEventListener("back", this.goBack(), false);
@@ -34,7 +37,8 @@ define(function (require) {
 
         // generic go-back function
         goBack: function () {
-            //window.history.back();
+            console.log("dietro");
+            window.history.back();
         },
 //    setActiveTabBarElement: function(elementId) {
 //      // here we assume that at any time at least one tab bar element is active
@@ -42,52 +46,86 @@ define(function (require) {
 //      document.getElementById(elementId).classList.add("active");
 //    },
 
-        map: function (event) {
-            Backbone.history.navigate("map", {
-                trigger: true
-            });
-        },
         home: function (event) {
+            this.show_hide_menu(event,true);
             Backbone.history.navigate("home", {
                 trigger: true
             });
         },
-        myView: function (event) {
-            Backbone.history.navigate("myview", {
+        profilo: function (event) {
+            this.show_hide_menu(event,true);
+            Backbone.history.navigate("profilo", {
                 trigger: true
             });
         },
-        show_hide_menu: function () {
+        show_modificaProfilo: function(){
+            this.show_hide_menu(event,true);
+            location.hash = "modificaProfilo";
+        },
+        
+        show_creaAnnuncio : function(){
+            this.show_hide_menu(event,true);
+            location.hash = "creaAnnuncio";
+        },
+        
+        /**
+         * se non passato il parametro bControl chiude il menu se aperto e viceversa
+         * altrimenti lo chiude
+         * 
+         * @param {event} e
+         * @param {boolean} bControl
+         * @returns {undefined}
+         */
+        show_hide_menu: function (e, bControl) {
+            bControl = bControl || false;
             this.$mymenu = $("#mymenu");
             this.$content = $("#content");
             this.$menu_row = $("#menu_row");
             this.$struct_btn = $("#struct_btn");
-            if (this.$mymenu.hasClass("aperto")){
-                this.$mymenu.removeClass("aperto");
-                this.$content.removeClass("aperto");
-                this.$menu_row.removeClass("aperto");
-                this.$struct_btn.removeClass("aperto");
+            if (bControl) {
+                if (this.$mymenu.hasClass("aperto")) {
+                    this.$mymenu.removeClass("aperto");
+                    this.$content.removeClass("aperto");
+                    this.$menu_row.removeClass("aperto");
+                    this.$struct_btn.removeClass("aperto");
+                }
             } else {
-                this.$mymenu.addClass("aperto");
-                this.$content.addClass("aperto");
-                this.$menu_row.addClass("aperto");
-                this.$struct_btn.addClass("aperto");
+                if (this.$mymenu.hasClass("aperto")) {
+                    this.$mymenu.removeClass("aperto");
+                    this.$content.removeClass("aperto");
+                    this.$menu_row.removeClass("aperto");
+                    this.$struct_btn.removeClass("aperto");
+                } else {
+                    this.$mymenu.addClass("aperto");
+                    this.$content.addClass("aperto");
+                    this.$menu_row.addClass("aperto");
+                    this.$struct_btn.addClass("aperto");
+                }
             }
-            
+
         },
-        show_offerte: function(){
+        show_offerte: function () {
             this.$line_selector = $("#line_selector");
             this.$line_selector.removeClass("richieste");
             this.$line_selector.addClass("offerte");
-            
+            $("#homepage-container-richieste").removeClass("attivo");
+            $("#homepage-container-offerte").addClass("attivo");
+            $("#btn-richieste").removeClass("attivo");
+            $("#btn-offerte").addClass("attivo");
+
         },
-        show_richieste: function(){
+        show_richieste: function () {
             this.$line_selector = $("#line_selector")
             this.$line_selector.removeClass("offerte");
             this.$line_selector.addClass("richieste");
+            $("#homepage-container-offerte").removeClass("attivo");
+            $("#homepage-container-richieste").addClass("attivo");
+            $("#btn-offerte").removeClass("attivo");
+            $("#btn-richieste").addClass("attivo");
         }
     });
 
     return StructureView;
+
 
 });

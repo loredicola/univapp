@@ -1,0 +1,71 @@
+/* 
+    Created on : 20-gen-2016, 15.28.08
+    Author     : Federico93
+*/
+
+
+.ProfiloImg{
+    height: 250px;
+    width : 100%;
+    background-image: url("../img/myimg.png");
+    background-size: 100% 100%;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.UserName{
+    width: 100%;
+    height: 50px;
+    padding-top: 200px;
+    line-height: 50px;
+    background: none;
+    color: $primary-color-text;
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.MyContainer{
+    width: 100%;
+    min-height: 60px;
+    line-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+    background-color: $primary-color-text;
+    -webkit-box-shadow: 0px 0px 1px $divider-color;
+    -ms-box-shadow: 0px 0px 1px $divider-color;
+}
+
+.Primary{
+    height: 30px;
+    line-height: 30px;
+    color: $primary-text-color;
+}
+
+.Secondary{
+    height: 30px;
+    line-height: 30px;
+    font-style: italic;
+    color: $secondary-text-color;
+}
+
+.Ranking{
+    color: $primary-text-color;
+}
+
+.Titolo{
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 5px;
+    color: $primary-text-color;
+}
+
+.Esami{
+    min-height: 40px;
+    line-height: 40px;    
+    font-style: italic;
+    color: $secondary-text-color;
+}

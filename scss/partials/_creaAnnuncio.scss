@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-gen-2016, 16.37.31
+    Author     : Andrea
+*/
+.creaAnnuncio-container{
+    padding : 50px 15px 0px 15px;
+}
+
+.free-or-pay{
+    text-align: center;
+    background-color: $primary-color-light;
+    color : $secondary-text-color;
+    font-size : 25px;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    margin : 10px 20px 10px 20px;
+    border : none;
+    &:focus{
+        outline : none;
+    }
+    &.attivo{
+        background-color: $primary-color;
+        color : $primary-color-text;
+    }
+}
+textarea.descrizioneAnnuncio,
+input.creaAnnuncio-title{
+    padding : 5px;
+    border-color:$primary-color;
+    &:focus{
+        outline : none;
+        border-color:$primary-color;
+        box-shadow: 0px 0px 2px $primary-color-dark;
+    }
+}
+button.creaAnnuncio-btn-pubblica{
+    margin-top : 50px;
+    width: 100%;
+    outline : none;
+    border : none;
+    height: $univapp-header-height;
+    line-height: $univapp-header-height;
+    background-color: $primary-color;
+    color : $primary-color-text;
+}
+.creaAnnuncio-container-freePay{
+    margin : 50px 0px 50px 0px;
+}

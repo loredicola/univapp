@@ -4,20 +4,18 @@ define(function(require) {
   var Backbone = require("backbone");
   var Utils = require("utils");
 
-  var HomePageView = Backbone.View.extend({
+  var CreaAnnuncioPageView = Backbone.View.extend({
 
-    constructorName: "HomePageView",
+    constructorName: "CreaAnnuncioView",
 
-    //id: "main",
 
     events: {
-            "click #btn-offerte": "show_offerte",
-            "click #btn-richieste": "show_richieste" 
+        "click .free-or-pay" : "selectFreePay"
     },
 
     initialize: function(options) {
       // load the precompiled template
-      this.template = Utils.templates.homepage;
+      this.template = Utils.templates.creaAnnuncio;
       //this.on("inTheDOM", this.rendered);
       // bind the back event to the goBack function
       //document.getElementById("back").addEventListener("back", this.goBack(), false);
@@ -31,11 +29,13 @@ define(function(require) {
       return this;
       
     },
-    show_offerte: function(){
-        console.log("offerte");
-    },
-    show_richieste: function(){
-        console.log("richieste");
+    selectFreePay  : function(e){
+        $(".free-or-pay").removeClass("attivo");
+        var $target = $(e.target);
+            while(!$target.hasClass("free-or-pay")) {
+                $target=$target.parent();
+            }
+            $target.addClass("attivo");
     },
 
     // rendered: function(e) {
@@ -45,5 +45,7 @@ define(function(require) {
     
   });
 
-  return HomePageView;
+  return CreaAnnuncioPageView;
   });
+
+

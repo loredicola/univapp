@@ -12,8 +12,10 @@
     line-height: $univapp-header-height;
     background-color: $primary-color-dark;
     color : $primary-color-text;
+    z-index: 50;
 }
 .univapp-header-btn{
+    z-index: 50;
     position : absolute;
     top : $univapp-header-height;
     left : 0;
@@ -23,9 +25,18 @@
     line-height: $univapp-header-height;
     background-color: $primary-color-dark;
     transition-duration: 0.5s; 
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
     &.aperto{
-        transform: translate(0,$univapp-header-height);
+        transform: translate(0,$univapp-header-height) translateZ(0);
+        -webkit-transform: translate(0,$univapp-header-height) translateZ(0);
+        -ms-transform: translate(0,$univapp-header-height) translateZ(0);
         transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
+    }
+    &.nascosta{
+      display : none;   
     }
 }
 #content.univapp-container{
@@ -35,10 +46,16 @@
     padding-bottom : $univapp-header-height+$univapp-header-height;
     overflow: auto;
     transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
     &.aperto{
         padding-bottom : $univapp-header-height+$univapp-header-menu-height+$univapp-header-height;
-        transform: translate(0,$univapp-header-height);
+        transform: translate(0,$univapp-header-height) translateZ(0);
+        -webkit-transform: translate(0,$univapp-header-height) translateZ(0);
+        -ms-transform: translate(0,$univapp-header-height) translateZ(0);
         transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
     }
 }
 .myhrmenu-box{
@@ -47,21 +64,32 @@
     padding: 12px 14px;
     &.aperto{
         .myhrmenu2{
-            transform: rotate(45deg);
+            display:none;
             transition-duration: 0.5s;
+            -webkit-transition-duration: 0.5s;
+            -ms-transition-duration: 0.5s;
+        }
+        .myhrmenu3{
+            transform: rotate(-45deg) translateZ(0);
+            -webkit-transform: rotate(-45deg) translateZ(0);
+            -ms-transform: rotate(-45deg) translateZ(0);
+            transition-duration: 0.5s;
+            -webkit-transition-duration: 0.5s;
+            -ms-transition-duration: 0.5s;
+        }
+        .myhrmenu1{
+            transform: rotate(45deg) translateZ(0);
+            -webkit-transform: rotate(45deg) translateZ(0);
+            -ms-transform: rotate(45deg) translateZ(0);
+            transition-duration: 0.5s;
+            -webkit-transition-duration: 0.5s;
+            -ms-transition-duration: 0.5s;
             position: relative;
             top: 6px;
             left: 0;
             bottom: 0;
             right: 0;
-        }
-        .myhrmenu3{
-            transform: rotate(-45deg);
-            transition-duration: 0.5s;
-        }
-        .myhrmenu1{
-            display:none;
-            transition-duration: 0.5s;
+
         }
     }
 }
@@ -76,6 +104,7 @@
     border: 1px solid $primary-color-text;
     border-radius : 100px;
     transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
 }
 .myhrmenu-x{
     position: relative;
@@ -103,20 +132,32 @@
     width : 50%;
     height: ($univapp-header-btn-height)-$line-selector-height;
     text-align: center;
-    color : $primary-color-text;
+    color : $primary-color-light;
+    &.attivo{
+        color : $primary-color-text;
+    }
 }
 .line-selector{
     position: absolute;
     height: $line-selector-height;
     width: 50%;
-    background-color: $primary-color;
+    background-color: $primary-color-text;
     bottom : 0;
+    box-shadow : inset 0px 0px 1px $accent-color;
+    -webkit-box-shadow : inset 0px 0px 1px $accent-color;
+    -ms-box-shadow : inset 0px 0px 1px $accent-color;
     transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
     &.offerte{
     }
     &.richieste{
-        transform: translate(100%);
+        transform: translate(100%) translateZ(0);
+        -webkit-transform: translate(100%) translateZ(0);
+        -ms-transform: translate(100%) translateZ(0);
         transform-origin: left;
+        -webkit-transform-origin: left;
+        -ms-transform-origin: left;
     }
 }
 .menu-row{
@@ -124,14 +165,50 @@
     line-height: $univapp-header-menu-height;
     width: 100%;
     background-color : $primary-color;
-    transform: translate(0,$univapp-header-height);
+    z-index: 49;
+    top  : 50px;
     transition-duration: 5s;
-    //display : none;
-    &.aperto{
-    position: absolute;
-        transform: translate(0,$univapp-header-height);
-        transition-duration: 0.5s;
-
+        -webkit-transition-duration: 0.5s;
         display : block;
+    &.aperto{
+        /*position: absolute;*/
+        transform: translate(0,$univapp-header-height) translateZ(0);
+        -webkit-transform: translate(0,$univapp-header-height) translateZ(0);
+        transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
     }
+}
+.menu-row-item{
+    height : $univapp-header-height;
+    line-height: $univapp-header-height;
+    font-size : 30px;
+    color : $primary-color-text;
+}
+.buttonCreaAnnuncio{
+    position : absolute;
+    bottom : 20px;
+    right: 20px;
+    border-radius: 100px;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 2px $primary-color;
+    height: $univapp-header-height;
+    line-height: $univapp-header-height;
+    text-align: center;
+    padding-top: 1px;
+    padding-left: 1px;
+    font-size: 25px;
+    color : $primary-color-text;
+    width: $univapp-header-height;
+    &.nascosta{
+        transform: translate(0,75px) translateZ(0);
+        -webkit-transform: translate(0,75px) translateZ(0);
+        -ms-transform: translate(0,75px) translateZ(0);
+        transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
+    }
+}
+#content.nascosta{
+    top : 50px;
+    padding-bottom: 50px;
 }

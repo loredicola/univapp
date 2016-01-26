@@ -1,0 +1,137 @@
+/* 
+    Created on : 22-gen-2016, 19.24.37
+    Author     : Federico93
+*/
+
+.ProfiloImg{
+    height: 250px;
+    width : 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-image: url("../img/myimg.png");
+    background-size: 100% 100%;
+}
+
+.UserName{
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: relative; 
+    padding-top: 200px;
+    background: none;
+    color: $primary-color-text;
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.MyContainer1{
+    width: 100%;
+    min-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    background-color: $primary-color-text;
+    -webkit-box-shadow: 0px 0px 1px $divider-color;
+    -ms-box-shadow: 0px 0px 1px $divider-color;
+}
+
+input.ModificaProfiloInput{
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    padding: 0px;
+    margin: 0px 0px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+input.Ranking1{
+    height: 60px;
+    line-height: 60px;
+    border: none;
+    padding: 0px;
+    margin: 0px 0px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.Titolo1{
+    height: 30px;
+    line-height: 30px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: $primary-text-color;
+}
+
+input.Esame1{
+    min-height: 40px;
+    line-height: 40px;    
+    font-style: italic;
+    z-index: 0;
+    border: none;
+    padding: 0px;
+    margin: 0px 0px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+div .MyBtn{
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    margin: 0px;
+    bottom: 0px;
+    text-align: center;
+    &.first-child{
+        border-bottom: 1px solid $divider-color;
+    }
+    &.last-child{
+        border-top: 1px solid $divider-color;
+    }
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        outline: none;
+    }
+    &:active{
+        outline: none;
+    }
+
+}
+
+.MyBtn{
+    background-color: $primary-color;
+    text-transform: capitalize;
+    color: $primary-color-text;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline;
+    float: left;    
+
+}
+
+.Btn-newEsame{
+    height: 25px;
+    width: 25px;
+    float: right;
+    border: none;
+    border-radius: 15px;
+    margin-right: 15px;
+    outline: none;
+    z-index: 10;
+    text-align: center;
+    color: $primary-color-text;
+    background-color: $primary-color;
+    font-size: 15px;
+    display: block;
+}
+
+
+
+
+

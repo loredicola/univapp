@@ -4,11 +4,59 @@
 */
 .box-annunci{
     height: 200px;
-    border : 1px solid $primary-color-light;
     background-color : $primary-color-text; 
-    border-radius: 5px;
+    margin-bottom : 10px;
 }
 .homepage-container{
-    padding : 10px 5px 10px 5px;
     background-color: $divider-color;
+}
+.homepage-container-offerte{
+    display : none;
+    &.attivo{
+        display : block;
+    }
+}
+.homepage-container-richieste{
+    display : none;
+    &.attivo{
+        display : block;
+    }
+}
+.box-annunci-pay{
+    padding: 0px;
+    text-align: center;
+    width: 40px;
+    border-radius: 0px 0px 10px 0px;
+    background-color: $primary-color-light;
+    color : $accent-color;
+    height: 40px;
+    line-height: 40px;
+    font-size : 23px;
+}
+.box-annunci-user{
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    color : $primary-text-color;
+}
+.box-annunci-date{
+    line-height: 40px;
+    height: 40px;
+    color : $primary-text-color;
+    
+}
+.box-annunci-title{
+    padding-left: 40px;
+    line-height: 50px;
+    height: 50px;
+    //border-bottom: 1px solid $accent-color;
+    box-shadow: 0px 1px 1px $divider-color;
+    color : $primary-color-dark;
+}
+.box-annunci-description{
+    color : $secondary-text-color;
+    height: 110px;
+    //line-height: 110px;
+    padding-top : 10px;
+    
 }

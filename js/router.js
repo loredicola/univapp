@@ -4,51 +4,66 @@ define(function (require) {
     var Backbone = require("backbone");
     var MyModel = require("models/MyModel");
     var StructureView = require("views/StructureView");
-    var MyView = require("views/pages/MyView");
-    var MapView = require("views/pages/MapView");
     var HomePageView = require("views/HomePage/HomePageView");
+    var ProfiloPageView = require("views/ProfiloPage/ProfiloPageView");
+    var ModificaProfiloPageView = require("views/ModificaProfiloPage/ModificaProfiloPageView");
+    var CreaAnnuncioPageView = require("views/CreaAnnuncioPage/CreaAnnucioPageView");
 
     var AppRouter = Backbone.Router.extend({
         constructorName: "AppRouter",
         routes: {
             // the default is the structure view
             "": "home",
-            "myview": "myView",
-            "map": "map",
-            "home": "home"
+            "home": "home",
+            "profilo": "showProfilo",
+            "modificaProfilo": "showModificaProfilo",
+            "creaAnnuncio": "showCreaAnnuncio"
         },
         initialize: function (options) {
             this.currentView = undefined;
+            
 
             this.showStructure();
         },
-        myView: function () {
-            // highlight the nav1 tab bar element as the current one
-            //this.structureView.setActiveTabBarElement("nav1");
-            // create a model with an arbitrary attribute for testing the template engine
-            var model = new MyModel({
-                key: "testValue"
-            });
-            // create the view
-            var page = new MyView({
-                model: model
-            });
-            // show the view
-            this.changePage(page);
-        },
-        map: function () {
-            // highlight the nav2 tab bar element as the current one
-            //this.structureView.setActiveTabBarElement("nav2");
-            // create the view and show it
-            var page = new MapView();
-            this.changePage(page);
-        },
         home: function () {
-            // create the view and show it
-            //this.structureView.setActiveTabBarElement("nav3");
+            this.show_hide_nav_e_btn(false);
             var page = new HomePageView();
             this.changePage(page);
 
+        },
+        showProfilo: function () {
+            this.show_hide_nav_e_btn(true);
+            var page = new ProfiloPageView();
+            this.changePage(page);
+        },
+        showModificaProfilo: function () {
+            this.show_hide_nav_e_btn(true);
+            var page = new ModificaProfiloPageView();
+            this.changePage(page);
+        },
+        showCreaAnnuncio : function(){
+            this.show_hide_nav_e_btn(true);
+            var page = new CreaAnnuncioPageView();
+            this.changePage(page);
+        },
+        /**
+         * se bControll è true nasconde menu e botton + altrimeni li mostra
+         * 
+         * @param {boolean} bControll
+         * @returns {undefined}
+         */
+        show_hide_nav_e_btn : function(bControll){
+            bControll = bControll || false;
+            if(bControll){
+                if(!this.$content.hasClass("nascosta")){this.$content.addClass("nascosta");}
+                if(!this.$headbtn.hasClass("nascosta")){this.$headbtn.addClass("nascosta");}
+                if(!this.$buttonCreaAnnuncio.hasClass("nascosta")){this.$buttonCreaAnnuncio.addClass("nascosta");}
+            } else {
+                if(this.$content.hasClass("nascosta")){this.$content.removeClass("nascosta");}
+                if(this.$headbtn.hasClass("nascosta")){this.$headbtn.removeClass("nascosta");}
+                if(this.$buttonCreaAnnuncio.hasClass("nascosta")){this.$buttonCreaAnnuncio.removeClass("nascosta");}
+            }
+            
         },
         // load the structure view
         showStructure: function () {
@@ -57,6 +72,9 @@ define(function (require) {
                 // put the el element of the structure view into the DOM
                 document.body.appendChild(this.structureView.render().el);
                 this.structureView.trigger("inTheDOM");
+                this.$headbtn = $(".univapp-header-btn");
+            this.$content = $("#content");
+            this.$buttonCreaAnnuncio = $("#buttonCreaAnnuncio");
             }
         }
     });

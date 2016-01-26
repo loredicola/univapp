@@ -35,7 +35,7 @@ require(['backbone', 'utils'], function (Backbone, Utils) {
 
     //COMMENTARE RUN E DECOMMENTARE LA RIGA SUCCESSIVA SE DOPLOIATE SU SMARTPHONE
         run();
-        //document.addEventListener("deviceready", run, false);
+//        document.addEventListener("deviceready", run, false);
 
         function run() {
             // Here we precompile ALL the templates so that the app will be quickier when switching views

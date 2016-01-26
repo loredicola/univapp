@@ -25,7 +25,7 @@
 </nav> -->
 <div>
 <div class="univapp-header-nav">
-    <div class="pull-left myhrmenu-box-back">
+    <div class="pull-left myhrmenu-box-back" id="backButton">
         <hr class="myhrmenu myhrmenu-x">
         <hr class="myhrmenu myhrmenu-xx">
     </div>
@@ -37,16 +37,17 @@
     </div>
 </div>
     <div class="menu-row" id="menu_row">
-        <div class="col-xs-3 text-center">profilo</div>
-        <div class="col-xs-3 text-center">gestione</div>
-        <div class="col-xs-3 text-center">3</div>
-        <div class="col-xs-3 text-center">4</div>
+        <div class="col-xs-3 text-center menu-row-item" id="icoHome"><i class="fa fa-home"></i></div>
+        <div class="col-xs-3 text-center menu-row-item" id="icoProfilo"><i class="fa fa-user"></i></div>
+        <div class="col-xs-3 text-center menu-row-item" id="icoImpostazioni"><i class="fa fa-cog"></i></div>
+        <div class="col-xs-3 text-center menu-row-item"><i class="fa fa-beer"></i></div>
     </div>
     <div class="univapp-header-btn" id="struct_btn">
-        <div class="univapp-header-button pull-left" id="btn-offerte">Offerte</div>
+        <div class="univapp-header-button pull-left attivo" id="btn-offerte">Offerte</div>
         <div class="univapp-header-button pull-right" id="btn-richieste">Richieste</div>
         <div class="line-selector offerte"  id="line_selector"></div>
     </div>    
     <div id="content" class="content univapp-container">
     </div>
 </div>
+<div class="buttonCreaAnnuncio" id="buttonCreaAnnuncio"><i class="fa fa-plus"></i></div>
