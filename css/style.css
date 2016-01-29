@@ -488,8 +488,10 @@ and open the template in the editor.
   line-height: 50px;
   width: 50px;
   border-radius: 100px;
-  margin: 10px 20px 10px 20px;
-  border: none; }
+  margin: 60px 30px 30px 35px;
+  border: none;
+  /* margin-bottom: 0px; */
+  }
   .free-or-pay:focus {
     outline: none; }
   .free-or-pay.attivo {
@@ -577,3 +579,7 @@ button.creaAnnuncio-btn-pubblica {
   width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
+/* 
+    Created on : 29-gen-2016, 16.04.24
+    Author     : francesco
+*/

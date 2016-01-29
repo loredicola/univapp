@@ -8,6 +8,7 @@ define(function (require) {
     var ProfiloPageView = require("views/ProfiloPage/ProfiloPageView");
     var ModificaProfiloPageView = require("views/ModificaProfiloPage/ModificaProfiloPageView");
     var CreaAnnuncioPageView = require("views/CreaAnnuncioPage/CreaAnnucioPageView");
+    var paginaannuncioPageView = require("views/paginaannuncio/paginaannuncioPageView");
 
     var AppRouter = Backbone.Router.extend({
         constructorName: "AppRouter",
@@ -17,7 +18,8 @@ define(function (require) {
             "home": "home",
             "profilo": "showProfilo",
             "modificaProfilo": "showModificaProfilo",
-            "creaAnnuncio": "showCreaAnnuncio"
+            "creaAnnuncio": "showCreaAnnuncio",
+            "paginaannuncio": "showPaginaannuncio"
         },
         initialize: function (options) {
             this.currentView = undefined;
@@ -65,6 +67,13 @@ define(function (require) {
             }
             
         },
+        
+        
+        showPaginaannuncio: function(){
+            var page = new paginaannuncioPageView();
+            this.changePage(page);
+        },
+        
         // load the structure view
         showStructure: function () {
             if (!this.structureView) {

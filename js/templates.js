@@ -13,5 +13,6 @@ define({
     homepage: "templates/homepage/homepage.html",
     profilo: "templates/profilo/profilo.html",
     modificaProfilo: "templates/modificaProfilo/modificaProfilo.html",
-    creaAnnuncio: "templates/creaAnnuncio/creaAnnuncio.html"
+    creaAnnuncio: "templates/creaAnnuncio/creaAnnuncio.html",
+    paginaannuncio: "templates/paginaannuncio/paginaannuncio.html"
 });
