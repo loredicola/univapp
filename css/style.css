@@ -488,10 +488,8 @@ and open the template in the editor.
   line-height: 50px;
   width: 50px;
   border-radius: 100px;
-  margin: 60px 30px 30px 35px;
-  border: none;
-  /* margin-bottom: 0px; */
-  }
+  margin: 10px 20px 10px 20px;
+  border: none; }
   .free-or-pay:focus {
     outline: none; }
   .free-or-pay.attivo {
@@ -528,6 +526,54 @@ button.creaAnnuncio-btn-pubblica {
 
 .creaAnnuncio-container-freePay {
   margin: 50px 0px 50px 0px; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30-gen-2016, 12.54.21
+    Author     : Lorenzo
+*/
+.annuncio-conteiner-f {
+  padding: 15px 11px 15px 11px; }
+
+.titolo-f {
+  border-bottom: 1px solid #FFFFFF;
+  text-align: left;
+  color: #9E9E9E;
+  margin-top: 20px; }
+
+.titolo2-f {
+  border-bottom: 1px solid #FFFFFF;
+  text-align: left;
+  color: #9E9E9E; }
+
+.mostrafoto-f {
+  float: right;
+  border: 5px solid #B2DFDB;
+  background-color: #B2DFDB;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%; }
+
+.autore-f {
+  float: right;
+  border: 1px solid white;
+  margin-top: 100px;
+  font-size: 13px;
+  color: #9E9E9E; }
+
+.text-f {
+  color: #9E9E9E;
+  padding: 0px 5px 15px 0px; }
+
+p.testoannuncio-f {
+  margin: 5px 10px;
+  border: 2px solid #B2DFDB;
+  height: auto;
+  width: 300px; }
 
 /* END SCSS PARTIALS INCLUDE */
 /* START STRUCTURE */
@@ -579,7 +625,3 @@ button.creaAnnuncio-btn-pubblica {
   width: 100%; }
 
 /*# sourceMappingURL=style.css.map */
-/* 
-    Created on : 29-gen-2016, 16.04.24
-    Author     : francesco
-*/
