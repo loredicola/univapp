@@ -1,42 +1,885 @@
-/*
-Error: Invalid CSS after "...als/login.scss'": expected "{", was ";"
-        on line 35 of C:\Users\Andrea\Documents\NetBeansProjects\UnivApp\www\scss\style.scss
+/* STANDARD FOR MOBILE */
+* {
+  /* transparent link and button selection */
+  -webkit-tap-highlight-color: transparent; }
 
-30: @import 'partials/navbar-header.scss';
-31: @import 'partials/profilo.scss';
-32: @import 'partials/modificaProfilo.scss';
-33: @import 'partials/creaAnnuncio.scss';
-34: <<<<<<< HEAD
-35: @import 'partials/login.scss';
-36: @import 'partials/signup.scss';
-37: @import 'partials/filtri.scss';
-38: =======
-39: @import 'partials/paginaAnnuncio.scss';
-40: >>>>>>> 753c6855d4e90dbe3cdcc80b8c4278cfdc80f763
+body {
+  -webkit-touch-callout: none;
+  /* no callouts during tap and hold */
+  -webkit-text-size-adjust: none;
+  /* no fonts auto inflation */
+  -webkit-user-select: none;
+  /* no copy and paste, etc. */
+  background-attachment: fixed;
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%; }
 
-Backtrace:
-C:\Users\Andrea\Documents\NetBeansProjects\UnivApp\www\scss\style.scss:35
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:1179:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:1115:in `expected'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:1110:in `tok!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:655:in `block'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:649:in `ruleset'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:674:in `block_child'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:667:in `block_contents'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:126:in `stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/engine.rb:403:in `_to_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/engine.rb:295:in `render_with_sourcemap'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/exec/sass_scss.rb:412:in `run'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.20/bin/sass:13:in `<top (required)>'
-C:/Ruby22-x64/bin/sass:23:in `load'
-C:/Ruby22-x64/bin/sass:23:in `<main>'
+/* END STANDARD MOBILE */
+/* SCSS PARTIALS IMPORT */
+/* 
+    Created on : 19-gen-2016, 20.10.59
+    Author     : Andrea
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...als/login.scss'\": expected \"{\", was \";\"\A         on line 35 of C:\Users\Andrea\Documents\NetBeansProjects\UnivApp\www\scss\style.scss\A \A 30: @import 'partials/navbar-header.scss';\A 31: @import 'partials/profilo.scss';\A 32: @import 'partials/modificaProfilo.scss';\A 33: @import 'partials/creaAnnuncio.scss';\A 34: <<<<<<< HEAD\A 35: @import 'partials/login.scss';\A 36: @import 'partials/signup.scss';\A 37: @import 'partials/filtri.scss';\A 38: =======\A 39: @import 'partials/paginaAnnuncio.scss';\A 40: >>>>>>> 753c6855d4e90dbe3cdcc80b8c4278cfdc80f763"; }
+/* 
+    Created on : 19-gen-2016, 19.30.44
+    Author     : Andrea
+*/
+/*PALETTA DEI COLORI*/
+/* CUSTOM FONTS */
+@font-face {
+  font-family: 'Dax';
+  src: url("../fonts/DaxBold.ttf") format("truetype"); }
+/* END CUSTOM FONTS */
+/* 
+    Created on : 19-gen-2016, 19.28.41
+    Author     : Andrea
+*/
+.box-annunci {
+  height: 200px;
+  background-color: #FFFFFF;
+  margin-bottom: 10px; }
+
+.homepage-container {
+  background-color: #B6B6B6; }
+
+.homepage-container-offerte {
+  display: none; }
+  .homepage-container-offerte.attivo {
+    display: block; }
+
+.homepage-container-richieste {
+  display: none; }
+  .homepage-container-richieste.attivo {
+    display: block; }
+
+.box-annunci-pay {
+  padding: 0px;
+  text-align: center;
+  width: 40px;
+  border-radius: 0px 0px 10px 0px;
+  background-color: #B2DFDB;
+  color: #9E9E9E;
+  height: 40px;
+  line-height: 40px;
+  font-size: 23px; }
+
+.box-annunci-user {
+  height: 40px;
+  line-height: 40px;
+  font-size: 17px;
+  color: #212121; }
+
+.box-annunci-date {
+  line-height: 40px;
+  height: 40px;
+  color: #212121; }
+
+.box-annunci-title {
+  padding-left: 40px;
+  line-height: 50px;
+  height: 50px;
+  box-shadow: 0px 1px 1px #B6B6B6;
+  color: #00796B; }
+
+.box-annunci-description {
+  color: #727272;
+  height: 110px;
+  padding-top: 10px; }
+
+/* 
+    Created on : 19-gen-2016, 20.01.44
+    Author     : Andrea
+*/
+.univapp-header-nav {
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /*text-align: center;*/
+  height: 50px;
+  line-height: 50px;
+  background-color: #00796B;
+  color: #FFFFFF;
+  z-index: 50; }
+
+.univapp-header-btn {
+  z-index: 50;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background-color: #00796B;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s; }
+  .univapp-header-btn.aperto {
+    transform: translate(0, 50px) translateZ(0);
+    -webkit-transform: translate(0, 50px) translateZ(0);
+    -ms-transform: translate(0, 50px) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s; }
+  .univapp-header-btn.nascosta {
+    display: none; }
+
+#content.univapp-container {
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  padding-bottom: 100px;
+  overflow: auto;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s; }
+  #content.univapp-container.aperto {
+    padding-bottom: 150px;
+    transform: translate(0, 50px) translateZ(0);
+    -webkit-transform: translate(0, 50px) translateZ(0);
+    -ms-transform: translate(0, 50px) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s; }
+
+.myhrmenu-box {
+  height: 50px;
+  width: 50px;
+  padding: 12px 14px; }
+  .myhrmenu-box.aperto .myhrmenu2 {
+    display: none;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s; }
+  .myhrmenu-box.aperto .myhrmenu3 {
+    transform: rotate(-45deg) translateZ(0);
+    -webkit-transform: rotate(-45deg) translateZ(0);
+    -ms-transform: rotate(-45deg) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s; }
+  .myhrmenu-box.aperto .myhrmenu1 {
+    transform: rotate(45deg) translateZ(0);
+    -webkit-transform: rotate(45deg) translateZ(0);
+    -ms-transform: rotate(45deg) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    position: relative;
+    top: 6px;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+
+.myhrmenu,
+.myhrmenu1,
+.myhrmenu2,
+.myhrmenu3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s; }
+
+.myhrmenu-x {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 10px;
+  -ms-transform: rotate(-45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-45deg); }
+
+.myhrmenu-xx {
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(45deg); }
+
+.myhrmenu-box-back {
+  padding: 15px;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px; }
+
+.univapp-header-button {
+  width: 50%;
+  height: 47px;
+  text-align: center;
+  color: #B2DFDB; }
+  .univapp-header-button.attivo {
+    color: #FFFFFF; }
+
+.line-selector {
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background-color: #FFFFFF;
+  bottom: 0;
+  box-shadow: inset 0px 0px 1px #9E9E9E;
+  -webkit-box-shadow: inset 0px 0px 1px #9E9E9E;
+  -ms-box-shadow: inset 0px 0px 1px #9E9E9E;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s; }
+  .line-selector.richieste {
+    transform: translate(100%) translateZ(0);
+    -webkit-transform: translate(100%) translateZ(0);
+    -ms-transform: translate(100%) translateZ(0);
+    transform-origin: left;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left; }
+
+.menu-row {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background-color: #009688;
+  z-index: 49;
+  top: 50px;
+  transition-duration: 5s;
+  -webkit-transition-duration: 0.5s;
+  display: block; }
+  .menu-row.aperto {
+    /*position: absolute;*/
+    transform: translate(0, 50px) translateZ(0);
+    -webkit-transform: translate(0, 50px) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; }
+
+.menu-row-item {
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+  color: #FFFFFF; }
+
+.buttonCreaAnnuncio {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 100px;
+  background-color: #009688;
+  box-shadow: 0px 0px 2px #009688;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  padding-top: 1px;
+  padding-left: 1px;
+  font-size: 25px;
+  color: #FFFFFF;
+  width: 50px;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s; }
+  .buttonCreaAnnuncio.nascosta {
+    transform: translate(0, 75px) translateZ(0);
+    -webkit-transform: translate(0, 75px) translateZ(0);
+    -ms-transform: translate(0, 75px) translateZ(0);
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s; }
+
+#content.nascosta {
+  top: 50px;
+  padding-bottom: 50px; }
+
+.menu-filter-box {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  color: #FFFFFF;
+  display: none; }
+  .menu-filter-box.visible {
+    display: block; }
+
+.pagina-filtri {
+  position: absolute;
+  background-color: #B2DFDB;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 100%;
+  transition-duration: .5s;
+  -webkit-transition-duration: .5s;
+  -ms-transition-duration: .5s;
+  z-index: 49; }
+  .pagina-filtri.nascosto {
+    transform: translate(0px, 100%) translateZ(0);
+    -webkit-transform: translate(0px, 100%) translateZ(0);
+    -ms-transform: translate(0px, 100%) translateZ(0);
+    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -ms-transition-duration: .5s; }
+
+/* 
+    Created on : 20-gen-2016, 15.28.08
+    Author     : Federico93
+*/
+.ProfiloImg {
+  height: 250px;
+  width: 100%;
+  background-image: url("../img/myimg.png");
+  background-size: 100% 100%;
+  border-radius: 0px 0px 5px 5px; }
+
+.UserName {
+  width: 100%;
+  height: 50px;
+  padding-top: 200px;
+  line-height: 50px;
+  background: none;
+  color: #FFFFFF;
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize; }
+
+.MyContainer {
+  width: 100%;
+  min-height: 60px;
+  line-height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 1px #B6B6B6;
+  -ms-box-shadow: 0px 0px 1px #B6B6B6; }
+
+.Primary {
+  height: 30px;
+  line-height: 30px;
+  color: #212121; }
+
+.Secondary {
+  height: 30px;
+  line-height: 30px;
+  font-style: italic;
+  color: #727272; }
+
+.Star {
+  height: 60px;
+  line-height: 60px;
+  width: 60%;
+  color: #009688; }
+  .Star i {
+    display: none; }
+  .Star.star1 i.sstar1, .Star.star2 i.sstar1, .Star.star3 i.sstar1, .Star.star4 i.sstar1, .Star.star5 i.sstar1 {
+    display: inline-block; }
+  .Star.star2 i.sstar2, .Star.star3 i.sstar2, .Star.star4 i.sstar2, .Star.star5 i.sstar2 {
+    display: inline-block; }
+  .Star.star3 i.sstar3, .Star.star4 i.sstar3, .Star.star5 i.sstar3 {
+    display: inline-block; }
+  .Star.star4 i.sstar4, .Star.star5 i.sstar4 {
+    display: inline-block; }
+  .Star.star5 i.sstar5 {
+    display: inline-block; }
+
+.Titolo {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+  color: #212121; }
+
+.Esami {
+  min-height: 40px;
+  line-height: 40px;
+  font-style: italic;
+  color: #727272; }
+
+/* 
+    Created on : 22-gen-2016, 19.24.37
+    Author     : Federico93
+*/
+.ProfiloImg {
+  height: 250px;
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+  background-image: url("../img/myimg.png");
+  background-size: 100% 100%; }
+
+.UserName {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  position: relative;
+  padding-top: 200px;
+  background: none;
+  color: #FFFFFF;
+  font-size: 40px;
+  text-align: center;
+  text-transform: capitalize; }
+
+.MyContainer1 {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 1px #B6B6B6;
+  -ms-box-shadow: 0px 0px 1px #B6B6B6; }
+
+.MyContainer2 {
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  padding-right: 15px; }
+
+#RankP, #RankM {
+  display: inline-block;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  background-color: #009688;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 100px;
+  border: none;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px 0px solid #009688; }
+  #RankP#RankP, #RankM#RankP {
+    margin-left: 1px; }
+  #RankP#RankM, #RankM#RankM {
+    margin-right: 1px; }
+  #RankP:focus, #RankM:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  #RankP:hover, #RankM:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  #RankP:active, #RankM:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+
+input.ModificaProfiloInput {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 5px;
+  margin: 5px 0px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: 1px 0px solid #009688; }
+  input.ModificaProfiloInput:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.ModificaProfiloInput:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.ModificaProfiloInput:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+
+input.Ranking1 {
+  min-height: 40px;
+  line-height: 40px;
+  padding-left: 5px;
+  margin: 0px 0px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  width: 60%;
+  border: 1px 0px solid #009688; }
+  input.Ranking1:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Ranking1:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Ranking1:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+
+input.Esame1 {
+  min-height: 40px;
+  line-height: 40px;
+  font-style: italic;
+  padding-left: 5px;
+  margin: 5px 0px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: 1px 0px solid #009688; }
+  input.Esame1:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Esame1:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Esame1:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+
+.Titolo1 {
+  height: 40px;
+  line-height: 40px;
+  text-transform: capitalize;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #212121;
+  margin-bottom: 5px; }
+
+div .MyBtn {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  margin: 0px;
+  bottom: 0px;
+  text-align: center; }
+  div .MyBtn.first-child {
+    border-bottom: 1px solid #B6B6B6; }
+  div .MyBtn.last-child {
+    border-top: 1px solid #B6B6B6; }
+  div .MyBtn:focus {
+    outline: none; }
+  div .MyBtn:hover {
+    outline: none; }
+  div .MyBtn:active {
+    outline: none; }
+
+.MyBtn {
+  background-color: #009688;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline;
+  float: left; }
+
+.Btn-addEsame {
+  height: 40px;
+  width: 40px;
+  float: right;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #009688;
+  font-size: 30px;
+  display: block; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-gen-2016, 16.37.31
+    Author     : Andrea
+*/
+.creaAnnuncio-container {
+  padding: 50px 15px 0px 15px; }
+
+.free-or-pay {
+  text-align: center;
+  background-color: #B2DFDB;
+  color: #727272;
+  font-size: 25px;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  margin: 10px 20px 10px 20px;
+  border: none; }
+  .free-or-pay:focus {
+    outline: none; }
+  .free-or-pay.attivo {
+    background-color: #009688;
+    color: #FFFFFF; }
+
+textarea.descrizioneAnnuncio,
+input.creaAnnuncio-title {
+  padding: 5px;
+  border-color: #009688;
+  border-radius: 3px; }
+  textarea.descrizioneAnnuncio:focus,
+  input.creaAnnuncio-title:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0px 0px 2px #00796B; }
+
+input.creaAnnuncio-course {
+  padding: 5px;
+  border-color: #009688; }
+  input.creaAnnuncio-course:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0px 0px 2px #00796B; }
+
+button.creaAnnuncio-btn-pubblica {
+  margin-top: 50px;
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 50px;
+  line-height: 50px;
+  background-color: #009688;
+  color: #FFFFFF; }
+
+.creaAnnuncio-container-freePay {
+  margin: 50px 0px 50px 0px; }
+
+.box-buttonOffertaRichiesta {
+  margin: 20px 0px 10px 0px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center; }
+  .box-buttonOffertaRichiesta button {
+    margin: 0px 10px 0px 10px;
+    background-color: #B2DFDB;
+    color: #727272;
+    border: none;
+    text-align: center;
+    border-radius: 100px;
+    height: 50px;
+    line-height: 50px;
+    width: 120px;
+    outline: none; }
+    .box-buttonOffertaRichiesta button:hover {
+      outline: none; }
+    .box-buttonOffertaRichiesta button.attivo {
+      background-color: #009688;
+      color: #FFFFFF; }
+
+.titolo-offerte-richieste {
+  margin-top: 20px; }
+
+/* 
+    Created on : 26-gen-2016, 15.12.45
+    Author     : Andrea
+*/
+input.login-input {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0px 10px 0px;
+  border: 1px solid #009688;
+  border-radius: 5px; }
+  input.login-input:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0px 0px 5px #00796B; }
+
+.login-button {
+  width: 100%;
+  height: 40px;
+  margin: 15px 0px 15px 0px;
+  border-color: #009688;
+  border-radius: 5px;
+  background-color: #009688;
+  color: #FFFFFF;
+  border: none; }
+  .login-button:focus {
+    box-shadow: 0px 0px 5px #00796B;
+    outline: none;
+    border: 1px solid #009688;
+    background: #FFFFFF;
+    color: #009688; }
+
+.login-container {
+  text-align: center;
+  padding: 50px 30px 0px 30px; }
+
+.signup-margin {
+  margin: 50px 0px 0px 0px; }
+
+.UA-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin: 0px 0px 50px 0px; }
+
+/* 
+    Created on : 26-gen-2016, 15.12.53
+    Author     : Andrea
+*/
+/* 
+    Created on : 26-gen-2016, 15.27.15
+    Author     : Federico93
+*/
+.Titolo2 {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #009688;
+  margin-bottom: 11px; }
+
+.ContainerFiltri {
+  min-height: 40px;
+  line-height: 40px;
+  margin: 0px 20px 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #212121; }
+
+input.selectCorso, .selectFacolta, .selectDipartimento {
+  height: 40px;
+  border: 1px solid #009688; }
+  input.selectCorso:focus, .selectFacolta:focus, .selectDipartimento:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+  input.selectCorso:hover, .selectFacolta:hover, .selectDipartimento:hover {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+  input.selectCorso:active, .selectFacolta:active, .selectDipartimento:active {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+
+div .BtnFiltri {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  margin-top: 10px;
+  bottom: 0px;
+  text-align: center;
+  background-color: #009688;
+  color: #FFFFFF;
+  font-size: 15px; }
+  div .BtnFiltri:focus {
+    outline: none; }
+  div .BtnFiltri:hover {
+    outline: none; }
+  div .BtnFiltri:active {
+    outline: none; }
+
+.filter-caret {
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-top: 5px; }
+
+.filter-caret-box {
+  height: 40px;
+  width: 50px; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30-gen-2016, 12.54.21
+    Author     : Lorenzo
+*/
+.annuncio-conteiner-f {
+  padding: 15px 11px 15px 11px; }
+
+.titolo-f {
+  border-bottom: 1px solid #FFFFFF;
+  text-align: left;
+  color: #9E9E9E;
+  margin-top: 20px; }
+
+.titolo2-f {
+  border-bottom: 1px solid #FFFFFF;
+  text-align: left;
+  color: #9E9E9E; }
+
+.mostrafoto-f {
+  float: right;
+  border: 5px solid #B2DFDB;
+  background-color: #B2DFDB;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%; }
+
+.autore-f {
+  float: right;
+  border: 1px solid white;
+  margin-top: 100px;
+  font-size: 13px;
+  color: #9E9E9E; }
+
+.text-f {
+  color: #9E9E9E;
+  padding: 0px 5px 15px 0px; }
+
+p.testoannuncio-f {
+  margin: 5px 10px;
+  border: 2px solid #B2DFDB;
+  height: auto;
+  width: 300px; }
+
+/* END SCSS PARTIALS INCLUDE */
+/* START STRUCTURE */
+#main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden; }
+
+.displaynone {
+  display: none; }
+
+.invisible {
+  visibility: hidden; }
+
+#content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.scrollable {
+  -webkit-overflow-scrolling: touch; }
+
+.not_scrollable {
+  -webkit-overflow-scrolling: auto; }
+
+/* END STRUCTURE */
+#map {
+  height: 100%;
+  width: 100%; }
+
+/*# sourceMappingURL=style.css.map */

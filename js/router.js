@@ -8,7 +8,6 @@ define(function (require) {
     var ProfiloPageView = require("views/ProfiloPage/ProfiloPageView");
     var ModificaProfiloPageView = require("views/ModificaProfiloPage/ModificaProfiloPageView");
     var CreaAnnuncioPageView = require("views/CreaAnnuncioPage/CreaAnnucioPageView");
-<<<<<<< HEAD
     var LoginPageView = require("views/LoginPage/LoginPageView");
     var SignupPageView = require("views/SignupPage/SignupPageView");
     
@@ -16,10 +15,8 @@ define(function (require) {
     var MyModel = require("models/MyModel");
     //pipe per le nuove attivita
     
-=======
     var paginaannuncioPageView = require("views/paginaannuncio/paginaannuncioPageView");
 
->>>>>>> 753c6855d4e90dbe3cdcc80b8c4278cfdc80f763
     var AppRouter = Backbone.Router.extend({
         constructorName: "AppRouter",
         routes: {
@@ -29,12 +26,9 @@ define(function (require) {
             "profilo": "showProfilo",
             "modificaProfilo": "showModificaProfilo",
             "creaAnnuncio": "showCreaAnnuncio",
-<<<<<<< HEAD
             "login": "showLogin",
             "signup": "showSignup",
-=======
             "paginaannuncio": "showPaginaannuncio"
->>>>>>> 753c6855d4e90dbe3cdcc80b8c4278cfdc80f763
         },
         initialize: function (options) {
             

@@ -14,10 +14,7 @@ define({
     profilo: "templates/profilo/profilo.html",
     modificaProfilo: "templates/modificaProfilo/modificaProfilo.html",
     creaAnnuncio: "templates/creaAnnuncio/creaAnnuncio.html",
-<<<<<<< HEAD
     login: "templates/login/login.html",
-    signup: "templates/signup/signup.html"
-=======
+    signup: "templates/signup/signup.html",
     paginaannuncio: "templates/paginaannuncio/paginaannuncio.html"
->>>>>>> 753c6855d4e90dbe3cdcc80b8c4278cfdc80f763
 });
