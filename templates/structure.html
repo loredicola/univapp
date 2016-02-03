@@ -1,41 +1,17 @@
-<!--<header class="bar bar-nav UnivApp-header">
-      <a class="icon icon-left-nav pull-left"></a>
-      <a class="pull-right myhrmenu-box">
-          <hr class="myhrmenu">
-          <hr class="myhrmenu">
-          <hr class="myhrmenu"></a>
-      <h1 class="title">UnivApp</h1>
-</header>
-
-<nav class="bar bar-tab UnivApp-footer">
-  <a class="tab-item active" id="nav1">
-    Nav1
-  </a>
-  <a class="tab-item" id="nav2">
-    Nav2
-  </a>
-  <a class="tab-item" id="nav3">
-    Home
-  </a>
-</nav>
-
- <nav id="navigation">
-    <div id="nav1" class="i-4">nav 1</div>
-    <div id="nav2" class="i-8">nav 2</div>
-</nav> -->
 <div>
-<div class="univapp-header-nav">
-    <div class="pull-left myhrmenu-box-back" id="backButton">
-        <hr class="myhrmenu myhrmenu-x">
-        <hr class="myhrmenu myhrmenu-xx">
+    <div class="univapp-header-nav">
+        <div class="pull-left myhrmenu-box-back" id="backButton">
+            <hr class="myhrmenu myhrmenu-x">
+            <hr class="myhrmenu myhrmenu-xx">
+        </div>
+        UnivApp
+        <div class="pull-right myhrmenu-box" id="mymenu">
+            <hr class="myhrmenu1">
+            <hr class="myhrmenu2">
+            <hr class="myhrmenu3">
+        </div>
+        <div class="menu-filter-box pull-right" id="menu-filter"><i class="fa fa-search"></i></div>
     </div>
-    UnivApp
-    <div class="pull-right myhrmenu-box" id="mymenu">
-        <hr class="myhrmenu1">
-        <hr class="myhrmenu2">
-        <hr class="myhrmenu3">
-    </div>
-</div>
     <div class="menu-row" id="menu_row">
         <div class="col-xs-3 text-center menu-row-item" id="icoHome"><i class="fa fa-home"></i></div>
         <div class="col-xs-3 text-center menu-row-item" id="icoProfilo"><i class="fa fa-user"></i></div>
@@ -50,4 +26,48 @@
     <div id="content" class="content univapp-container">
     </div>
 </div>
+
 <div class="buttonCreaAnnuncio" id="buttonCreaAnnuncio"><i class="fa fa-plus"></i></div>
+
+<div class="pagina-filtri nascosto" id="paginaFiltri">
+    <div class="Titolo2">Filtri di ricerca
+        <div class="filter-caret-box pull-right" id="filter-close-caret">
+            <i class="filter-caret fa fa-caret-down"></i>
+        </div>
+    </div>
+    <div class="ContainerFiltri">
+        Dipartimento:
+        <select class="selectDipartimento">
+            <option selected>Nessuno</option>
+            <option value="IngCivEdil">Ingegneria Civile e Edile</option>
+            <option value="IngInfMat">Ingegneria dell'Informazione e Matematica</option>
+            <option value="IngIndEco">Ingegneria Industriale e dell'Economia</option>
+        </select>
+    </div>
+    <div class="ContainerFiltri">
+        Facoltà:
+        <select class="selectFacolta">
+            <option selected>Nessuno</option>
+            <option value="biologia">Biologia</option>
+            <option value="biotecnologie">Biotecnologie</option>
+            <option value="chimica">Chimica</option>
+            <option value="economia">Economia</option>
+            <option value="fisica">Fisica</option>
+            <option value="infermieristica">Infermieristica</option>
+            <option value="informatica">Informatica</option>
+            <option value="ingegneria">Ingegneria</option>
+            <option value="lettere">Lettere</option>
+            <option value="matematica">Matematica</option>
+            <option value="medicina">Medicina</option>
+            <option value="psicologia">Psicologia</option>
+            <option value="scienze ambientali">Scienze Ambientali</option>
+        </select>
+    </div>
+    <div class="ContainerFiltri">
+        Corso:
+        <input type='text' name='Corso' placeholder="Nome Corso" class='selectCorso'>
+    </div>
+    <div>
+        <button class='BtnFiltri col-xs-12'>Cerca</button>
+    </div>
+</div>

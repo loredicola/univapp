@@ -15,12 +15,13 @@ define(function (require) {
             "click #icoHome": "home",
             "click #icoProfilo": "profilo",
             "click #icoImpostazioni": "show_modificaProfilo",
-            "click #buttonCreaAnnuncio": "show_creaAnnuncio"
+            "click #buttonCreaAnnuncio": "show_creaAnnuncio",
+            "click #menu-filter": "show_filter",
+            "click #filter-close-caret": "show_filter"
         },
         initialize: function (options) {
             // load the precompiled template
             this.template = Utils.templates.structure;
-            this.$icoHome = $("#icoHome");
             //this.on("inTheDOM", this.rendered);
             // bind the back event to the goBack function
             //document.getElementById("back").addEventListener("back", this.goBack(), false);
@@ -28,6 +29,7 @@ define(function (require) {
         render: function () {
             // load the template
             this.el.innerHTML = this.template({});
+            this.$icoHome = $("#icoHome");
             // cache a reference to the content element
             this.contentElement = this.$el.find('#content')[0];
             return this;
@@ -37,7 +39,6 @@ define(function (require) {
 
         // generic go-back function
         goBack: function () {
-            console.log("dietro");
             window.history.back();
         },
 //    setActiveTabBarElement: function(elementId) {
@@ -47,27 +48,43 @@ define(function (require) {
 //    },
 
         home: function (event) {
+            this.show_filter(event,true);
             this.show_hide_menu(event,true);
             Backbone.history.navigate("home", {
                 trigger: true
             });
         },
         profilo: function (event) {
+            this.show_filter(event,true);
             this.show_hide_menu(event,true);
             Backbone.history.navigate("profilo", {
                 trigger: true
             });
         },
-        show_modificaProfilo: function(){
+        show_modificaProfilo: function(event){
+            this.show_filter(event,true);
             this.show_hide_menu(event,true);
             location.hash = "modificaProfilo";
         },
         
-        show_creaAnnuncio : function(){
+        show_creaAnnuncio : function(event){
             this.show_hide_menu(event,true);
             location.hash = "creaAnnuncio";
         },
-        
+        show_filter : function(e,bControl){
+            this.$filterPage = $("#paginaFiltri");
+//            if(hidden){
+//                if(!this.$filterPage.hasClass("hidden"))this.$filterPage.addClass("hidden")
+//            } else {
+//                if(this.$filterPage.hasClass("hidden"))this.$filterPage.removeClass("hidden");
+//            }
+            this.show_hide_menu(event,true);
+            if(bControl){
+                if(this.$filterPage.hasClass("nascosto"))this.$filterPage.removeClass("nascosto");
+            }
+                    if(this.$filterPage.hasClass("nascosto"))this.$filterPage.removeClass("nascosto");
+                    else this.$filterPage.addClass("nascosto");
+        },
         /**
          * se non passato il parametro bControl chiude il menu se aperto e viceversa
          * altrimenti lo chiude

@@ -1,0 +1,47 @@
+/* 
+    Created on : 26-gen-2016, 15.12.45
+    Author     : Andrea
+*/
+
+input.login-input{
+    width: 100%;
+    height: 40px;
+    margin : 10px 0px 10px 0px;
+    border : 1px solid $primary-color;
+    border-radius : 5px;
+    &:focus{
+        outline : none;
+        border-color:$primary-color;
+        box-shadow: 0px 0px 5px $primary-color-dark;
+    }
+}
+.login-button{
+    width: 100%;
+    height: 40px;
+    margin : 15px 0px 15px 0px;
+    border-color:$primary-color;
+    border-radius : 5px;
+    background-color: $primary-color;
+    color : $primary-color-text;
+    border : none;
+    &:focus{
+        box-shadow: 0px 0px 5px $primary-color-dark;
+        outline : none;
+        border : 1px solid $primary-color;
+        background: $primary-color-text;
+        color : $primary-color;
+    }
+}
+.login-container{
+    text-align: center;
+    padding : 50px 30px 0px 30px;
+}
+.signup-margin{
+    margin : 50px 0px 0px 0px;
+}
+.UA-img{
+    height: 100px;
+    width: 100px;
+    border-radius : 100px;
+    margin : 0px 0px 50px 0px;
+}

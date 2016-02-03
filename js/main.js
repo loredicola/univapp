@@ -55,7 +55,6 @@ require(['backbone', 'utils'], function (Backbone, Utils) {
 
                 function startRouter() {
                     // launch the router
-                    console.log("qui")
                     router = new AppRouter();
                     Backbone.history.start();
                 }

@@ -94,11 +94,12 @@ body {
     Author     : Andrea
 */
 .univapp-header-nav {
+  font-size: 18px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  text-align: center;
+  /*text-align: center;*/
   height: 50px;
   line-height: 50px;
   background-color: #00796B;
@@ -209,6 +210,7 @@ body {
 
 .myhrmenu-box-back {
   padding: 15px;
+  margin-right: 10px;
   height: 50px;
   width: 50px; }
 
@@ -277,7 +279,10 @@ body {
   padding-left: 1px;
   font-size: 25px;
   color: #FFFFFF;
-  width: 50px; }
+  width: 50px;
+  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s; }
   .buttonCreaAnnuncio.nascosta {
     transform: translate(0, 75px) translateZ(0);
     -webkit-transform: translate(0, 75px) translateZ(0);
@@ -288,8 +293,38 @@ body {
 
 #content.nascosta {
   top: 50px;
-  padding-bottom: 50px;
-  }
+  padding-bottom: 50px; }
+
+.menu-filter-box {
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  color: #FFFFFF;
+  display: none; }
+  .menu-filter-box.visible {
+    display: block; }
+
+.pagina-filtri {
+  position: absolute;
+  background-color: #B2DFDB;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  height: 400px;
+  width: 100%;
+  transition-duration: .5s;
+  -webkit-transition-duration: .5s;
+  -ms-transition-duration: .5s;
+  z-index: 49; }
+  .pagina-filtri.nascosto {
+    transform: translate(0px, 100%) translateZ(0);
+    -webkit-transform: translate(0px, 100%) translateZ(0);
+    -ms-transform: translate(0px, 100%) translateZ(0);
+    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -ms-transition-duration: .5s; }
 
 /* 
     Created on : 20-gen-2016, 15.28.08
@@ -317,10 +352,15 @@ body {
   width: 100%;
   min-height: 60px;
   line-height: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 30px;
   text-transform: capitalize;
   font-size: 15px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 1px #B6B6B6;
+  -ms-box-shadow: 0px 0px 1px #B6B6B6; }
 
 .Primary {
   height: 30px;
@@ -333,13 +373,27 @@ body {
   font-style: italic;
   color: #727272; }
 
-.Ranking {
-  color: #212121; }
+.Star {
+  height: 60px;
+  line-height: 60px;
+  width: 60%;
+  color: #009688; }
+  .Star i {
+    display: none; }
+  .Star.star1 i.sstar1, .Star.star2 i.sstar1, .Star.star3 i.sstar1, .Star.star4 i.sstar1, .Star.star5 i.sstar1 {
+    display: inline-block; }
+  .Star.star2 i.sstar2, .Star.star3 i.sstar2, .Star.star4 i.sstar2, .Star.star5 i.sstar2 {
+    display: inline-block; }
+  .Star.star3 i.sstar3, .Star.star4 i.sstar3, .Star.star5 i.sstar3 {
+    display: inline-block; }
+  .Star.star4 i.sstar4, .Star.star5 i.sstar4 {
+    display: inline-block; }
+  .Star.star5 i.sstar5 {
+    display: inline-block; }
 
 .Titolo {
-  height: 20px;
-  line-height: 20px;
-  padding-top: 5px;
+  height: 30px;
+  line-height: 30px;
   margin-bottom: 5px;
   color: #212121; }
 
@@ -349,23 +403,6 @@ body {
   font-style: italic;
   color: #727272; }
 
-.hrProfilo {
-  margin: 5px 0px;
-  color: #B6B6B6;
-  border: 1px solid #B6B6B6; }
-
-.MyBtn {
-  height: 30px;
-  line-height: 30px;
-  width: 100%;
-  background-color: #009688;
-  border: none;
-  padding: 0px 20px;
-  color: #FFFFFF;
-  text-transform: capitalize;
-  font-size: 15px;
-  letter-spacing: 1px; }
-
 /* 
     Created on : 22-gen-2016, 19.24.37
     Author     : Federico93
@@ -373,16 +410,16 @@ body {
 .ProfiloImg {
   height: 250px;
   width: 100%;
+  border-radius: 0px 0px 5px 5px;
   background-image: url("../img/myimg.png");
-  background-size: 100% 100%;
-  border-radius: 0px 0px 5px 5px; }
+  background-size: 100% 100%; }
 
 .UserName {
-  position: relative;
-  width: 100%;
   height: 50px;
-  padding-top: 200px;
   line-height: 50px;
+  width: 100%;
+  position: relative;
+  padding-top: 200px;
   background: none;
   color: #FFFFFF;
   font-size: 40px;
@@ -392,60 +429,146 @@ body {
 .MyContainer1 {
   width: 100%;
   min-height: 60px;
-  line-height: 30px;
-  margin: 5px 0px; }
+  padding: 10px 15px;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0px 0px 1px #B6B6B6;
+  -ms-box-shadow: 0px 0px 1px #B6B6B6; }
 
-modificaProfilo-input, modificaProfilo-input-tel {
-  padding-right: 0px;
-  padding-left: 30px;
-  height: 30px;
-  line-height: 30px;
-  margin: 0px 0px;
-  text-transform: capitalize;
-  font-size: 15px;
-  letter-spacing: 1px;
-  border: none; }
+.MyContainer2 {
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  padding-right: 15px; }
 
-.hrProfilo1 {
-  margin: 0px 0px;
-  color: #B6B6B6;
-  border-bottom: 1px solid #B6B6B6; }
+#RankP, #RankM {
+  display: inline-block;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  background-color: #009688;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 100px;
+  border: none;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px 0px solid #009688; }
+  #RankP#RankP, #RankM#RankP {
+    margin-left: 1px; }
+  #RankP#RankM, #RankM#RankM {
+    margin-right: 1px; }
+  #RankP:focus, #RankM:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  #RankP:hover, #RankM:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  #RankP:active, #RankM:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
 
-.Titolo1 {
-  height: 20px;
-  line-height: 20px;
-  padding-left: 30px;
+input.ModificaProfiloInput {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 5px;
   margin: 5px 0px;
   text-transform: capitalize;
   font-size: 15px;
   letter-spacing: 1px;
-  color: #212121; }
+  border: 1px 0px solid #009688; }
+  input.ModificaProfiloInput:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.ModificaProfiloInput:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.ModificaProfiloInput:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
 
-.Esami1 {
+input.Ranking1 {
+  min-height: 40px;
+  line-height: 40px;
+  padding-left: 5px;
+  margin: 0px 0px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  width: 60%;
+  border: 1px 0px solid #009688; }
+  input.Ranking1:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Ranking1:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Ranking1:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+
+input.Esame1 {
   min-height: 40px;
   line-height: 40px;
   font-style: italic;
-  z-index: 0; }
+  padding-left: 5px;
+  margin: 5px 0px;
+  text-transform: capitalize;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border: 1px 0px solid #009688; }
+  input.Esame1:focus {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Esame1:hover {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
+  input.Esame1:active {
+    outline: none;
+    -webkit-box-shadow: 0px 0px 5px #009688;
+    -ms-box-shadow: 0px 0px 5px #009688; }
 
-div .MyBtn1 {
+.Titolo1 {
+  height: 40px;
+  line-height: 40px;
+  text-transform: capitalize;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #212121;
+  margin-bottom: 5px; }
+
+div .MyBtn {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  margin: 0px;
   bottom: 0px;
-  height: 30px;
-  line-height: 30px;
-  width: 100%;
-  text-align: center;
-  border: none; }
-  div .MyBtn1.first-child {
+  text-align: center; }
+  div .MyBtn.first-child {
     border-bottom: 1px solid #B6B6B6; }
-  div .MyBtn1.last-child {
+  div .MyBtn.last-child {
     border-top: 1px solid #B6B6B6; }
-  div .MyBtn1:focus {
+  div .MyBtn:focus {
     outline: none; }
-  div .MyBtn1:hover {
+  div .MyBtn:hover {
     outline: none; }
-  div .MyBtn1:active {
+  div .MyBtn:active {
     outline: none; }
 
-.MyBtn1 {
+.MyBtn {
   background-color: #009688;
   text-transform: capitalize;
   color: #FFFFFF;
@@ -454,17 +577,17 @@ div .MyBtn1 {
   display: inline;
   float: left; }
 
-.MyBtn2 {
-  z-index: 10;
+.Btn-addEsame {
+  height: 40px;
+  width: 40px;
   float: right;
-  margin-right: 15px;
-  background-color: #009688;
   border: none;
-  border-radius: 10px;
-  color: #FFFFFF;
-  font-size: 15px;
-  box-shadow: 0px 2px rgba(158, 158, 158, 0.6);
+  border-radius: 20px;
   outline: none;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #009688;
+  font-size: 30px;
   display: block; }
 
 /*
@@ -499,7 +622,8 @@ and open the template in the editor.
 textarea.descrizioneAnnuncio,
 input.creaAnnuncio-title {
   padding: 5px;
-  border-color: #009688; }
+  border-color: #009688;
+  border-radius: 3px; }
   textarea.descrizioneAnnuncio:focus,
   input.creaAnnuncio-title:focus {
     outline: none;
@@ -518,6 +642,140 @@ button.creaAnnuncio-btn-pubblica {
 
 .creaAnnuncio-container-freePay {
   margin: 50px 0px 50px 0px; }
+
+.box-buttonOffertaRichiesta {
+  margin: 20px 0px 10px 0px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center; }
+  .box-buttonOffertaRichiesta button {
+    margin: 0px 10px 0px 10px;
+    background-color: #B2DFDB;
+    color: #727272;
+    border: none;
+    text-align: center;
+    border-radius: 100px;
+    height: 50px;
+    line-height: 50px;
+    width: 120px;
+    outline: none; }
+    .box-buttonOffertaRichiesta button:hover {
+      outline: none; }
+    .box-buttonOffertaRichiesta button.attivo {
+      background-color: #009688;
+      color: #FFFFFF; }
+
+.titolo-offerte-richieste {
+  margin-top: 20px; }
+
+/* 
+    Created on : 26-gen-2016, 15.12.45
+    Author     : Andrea
+*/
+input.login-input {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0px 10px 0px;
+  border: 1px solid #009688;
+  border-radius: 5px; }
+  input.login-input:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0px 0px 5px #00796B; }
+
+.login-button {
+  width: 100%;
+  height: 40px;
+  margin: 15px 0px 15px 0px;
+  border-color: #009688;
+  border-radius: 5px;
+  background-color: #009688;
+  color: #FFFFFF;
+  border: none; }
+  .login-button:focus {
+    box-shadow: 0px 0px 5px #00796B;
+    outline: none;
+    border: 1px solid #009688;
+    background: #FFFFFF;
+    color: #009688; }
+
+.login-container {
+  text-align: center;
+  padding: 50px 30px 0px 30px; }
+
+.signup-margin {
+  margin: 50px 0px 0px 0px; }
+
+.UA-img {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin: 0px 0px 50px 0px; }
+
+/* 
+    Created on : 26-gen-2016, 15.12.53
+    Author     : Andrea
+*/
+/* 
+    Created on : 26-gen-2016, 15.27.15
+    Author     : Federico93
+*/
+.Titolo2 {
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #009688;
+  margin-bottom: 11px; }
+
+.ContainerFiltri {
+  min-height: 40px;
+  line-height: 40px;
+  margin: 0px 20px 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #212121; }
+
+input.selectCorso, .selectFacolta, .selectDipartimento {
+  height: 40px;
+  border: 1px solid #009688; }
+  input.selectCorso:focus, .selectFacolta:focus, .selectDipartimento:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+  input.selectCorso:hover, .selectFacolta:hover, .selectDipartimento:hover {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+  input.selectCorso:active, .selectFacolta:active, .selectDipartimento:active {
+    outline: none;
+    box-shadow: 0px 0px 5px #009688; }
+
+div .BtnFiltri {
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  margin-top: 10px;
+  bottom: 0px;
+  text-align: center;
+  background-color: #009688;
+  color: #FFFFFF;
+  font-size: 15px; }
+  div .BtnFiltri:focus {
+    outline: none; }
+  div .BtnFiltri:hover {
+    outline: none; }
+  div .BtnFiltri:active {
+    outline: none; }
+
+.filter-caret {
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-top: 5px; }
+
+.filter-caret-box {
+  height: 40px;
+  width: 50px; }
 
 /* END SCSS PARTIALS INCLUDE */
 /* START STRUCTURE */

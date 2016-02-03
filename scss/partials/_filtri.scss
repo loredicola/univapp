@@ -1,0 +1,72 @@
+/* 
+    Created on : 26-gen-2016, 15.27.15
+    Author     : Federico93
+*/
+
+.Titolo2{
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    color: $primary-color-text;
+    background-color: $primary-color;
+    margin-bottom : 11px;
+}
+
+.ContainerFiltri{
+    min-height: 40px;
+    line-height: 40px;
+    margin: 0px 20px 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $primary-text-color;
+}
+
+input.selectCorso, .selectFacolta, .selectDipartimento{
+    height: 40px;
+    border: 1px solid $primary-color;
+    &:focus{
+        outline: none;
+        box-shadow: 0px 0px 5px $primary-color;
+    }
+    &:hover{
+        outline: none;
+        box-shadow: 0px 0px 5px $primary-color;
+    }
+    &:active{
+        outline: none;
+        box-shadow: 0px 0px 5px $primary-color;
+    }
+}
+
+div .BtnFiltri{ 
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    margin-top: 10px;
+    bottom: 0px;
+    text-align: center;
+    background-color: $primary-color;
+    color: $primary-color-text;
+    font-size: 15px;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        outline: none;        
+    }
+    &:active{
+        outline: none;
+    }
+}
+.filter-caret{
+    color : $primary-color-text;
+    font-size: 30px;
+    margin-top: 5px;
+}
+.filter-caret-box{
+    height: 40px;
+    width: 50px;
+}
+

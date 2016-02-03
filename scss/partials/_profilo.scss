@@ -52,8 +52,49 @@
     color: $secondary-text-color;
 }
 
-.Ranking{
-    color: $primary-text-color;
+.Star{
+    height: 60px;
+    line-height: 60px;
+    width: 60%;
+    color: $primary-color;
+    i{
+        display : none;
+    }
+    &.star1,
+    &.star2,
+    &.star3,
+    &.star4,
+    &.star5{
+        i.sstar1{
+            display : inline-block;
+        }
+    }
+    &.star2,
+    &.star3,
+    &.star4,
+    &.star5{
+        i.sstar2{
+            display : inline-block;
+        }
+    }
+    &.star3,
+    &.star4,
+    &.star5{
+        i.sstar3{
+            display: inline-block;
+        }
+    }
+    &.star4,
+    &.star5{
+        i.sstar4{
+            display: inline-block;
+        }
+    }
+    &.star5{
+        i.sstar5{
+            display: inline-block;
+        }
+    }
 }
 
 .Titolo{

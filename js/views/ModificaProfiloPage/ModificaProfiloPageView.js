@@ -11,6 +11,8 @@ define(function(require) {
     //id: "main",
 
     events: {
+        "click #Btn-addEsame": "addEsame",
+            "click .RankBtn": "increase_decrease_ranking",
     },
 
     initialize: function(options) {
@@ -36,22 +38,24 @@ define(function(require) {
     goBack: function() {
       //window.history.back();
     },
-    
-    /*addExam: function(){
-        
-        btn.bind("click",function(){
-            newExam= document.body.getElementById("#Esami1");
-            document.body.appendTo("#Esami1");
+    addEsame: function () {
+            this.$esame = $('#Esame1').clone();
+            this.$newEsame = this.$esame.val('');
+            this.$container = $("#ContainerEsami");
+            this.$container.append(this.$newEsame);
+        },
+        increase_decrease_ranking: function (e) {
+            this.$star = $('.Star');
+            this.$target = $(e.target);
+            var i = 0;
+            while(!this.$target.hasClass("RankBtn"))this.$target = this.$target.parent();
+            for (var j = 1; j <= 5 && i === 0; j++)i = (this.$star.hasClass("star" + j) ? j : 0);
+            var oldclass="star"+i;
+            if(this.$target.attr("id") ==="RankP" && i<5)++i;
+            if(this.$target.attr("id") ==="RankM" && i>1)--i;
+            var newclass = "star"+i;
+            this.$star.removeClass(oldclass).addClass(newclass)
         }
-                );
-    },*/
-
-
-//    setActiveTabBarElement: function(elementId) {
-//      // here we assume that at any time at least one tab bar element is active
-//      document.getElementsByClassName("active")[0].classList.remove("active");
-//      document.getElementById(elementId).classList.add("active");
-//    },
   });
 
   return ModificaProfiloPageView;

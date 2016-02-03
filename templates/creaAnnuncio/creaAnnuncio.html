@@ -1,13 +1,20 @@
 <div class="creaAnnuncio-container">
-    
+    <form role="form" id="formPubblicaAnncio">
     <input type="text" name="titoloAnnuncio" class="form-control creaAnnuncio-title" placeholder="inserire qui il titolo del tuo annuncio"/>
+    <input type="text" name="corsoAnnuncio" class="form-control creaAnnuncio-title" placeholder="inserire qui il corso"/>
+    </form>
+    <div class="clearfix text-center titolo-offerte-richieste"><label>Scegliere la categoria dove publicare l'annuncio</label></div>
+    <div class="clearfix box-buttonOffertaRichiesta">
+        <button class="button-offerte-richieste" name="sezione" value="offerte">Offerte</button>
+        <button class="button-offerte-richieste" name="sezione"value="richieste">Richieste</button>
+    </div>
     <div class="text-center creaAnnuncio-container-freePay">
         <div class="clearfix">
             <label>Scegliere se l'offerta dell'annuncio è <br> gratis o a pagamento</label>
             </div>
-    <button class="free-or-pay" id="gratis"><i class="fa fa-hand-peace-o"></i></button>
-    <button class="free-or-pay" id="pay"><i class="fa fa-euro"></i></button>
+    <button class="free-or-pay" id="gratis" value="free" name="soldi"><i class="fa fa-hand-peace-o"></i></button>
+    <button class="free-or-pay" id="pay" value="pay" name="soldi"><i class="fa fa-euro"></i></button>
     </div>
     <textarea name="descrizioneAnnuncio" class="descrizioneAnnuncio" placeholder="inserire qui la descrizione del tuo annuncio" rows="5"></textarea>
 </div>
-<button class="creaAnnuncio-btn-pubblica">Publica Annuncio</button>
+<button class="creaAnnuncio-btn-pubblica" id="pubblicaAnnuncio">Publica Annuncio</button>

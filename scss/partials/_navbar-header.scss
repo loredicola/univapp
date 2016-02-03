@@ -3,11 +3,12 @@
     Author     : Andrea
 */
 .univapp-header-nav{
+    font-size: 18px;
     position : absolute;
     top : 0;
     left : 0;
     right : 0;
-    text-align: center;
+    /*text-align: center;*/
     height: $univapp-header-height;
     line-height: $univapp-header-height;
     background-color: $primary-color-dark;
@@ -125,6 +126,7 @@
 }
 .myhrmenu-box-back{
     padding: 15px;
+    margin-right: 10px;
     height: $univapp-header-height;
     width : $univapp-header-height;
 }
@@ -199,6 +201,9 @@
     font-size: 25px;
     color : $primary-color-text;
     width: $univapp-header-height;
+        transition-duration: 0.5s;
+        -webkit-transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
     &.nascosta{
         transform: translate(0,75px) translateZ(0);
         -webkit-transform: translate(0,75px) translateZ(0);
@@ -211,4 +216,39 @@
 #content.nascosta{
     top : 50px;
     padding-bottom: 50px;
+}
+.menu-filter-box{
+    text-align: center;
+    height: $univapp-header-height;
+    width : $univapp-header-height;
+    line-height: $univapp-header-height;
+    font-size: 20px;
+    color : $primary-color-text;
+    display : none;
+    &.visible{
+            display : block;
+        }
+}
+.pagina-filtri{
+    position : absolute;
+    background-color: $primary-color-light;
+    bottom : 0px;
+    left : 0;
+    right: 0;
+    height: 400px;
+    width: 100%;
+    transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -ms-transition-duration: .5s;
+    z-index : 49;
+    &.nascosto{
+        transform: translate(0px,100%)translateZ(0);
+        -webkit-transform: translate(0px,100%)translateZ(0);
+        -ms-transform: translate(0px,100%)translateZ(0);
+        transition-duration: .5s;
+        -webkit-transition-duration: .5s;
+        -ms-transition-duration: .5s;
+    }
+    
+    
 }

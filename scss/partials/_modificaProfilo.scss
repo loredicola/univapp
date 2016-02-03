@@ -27,56 +27,109 @@
 .MyContainer1{
     width: 100%;
     min-height: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
+    padding: 10px 15px;   
     background-color: $primary-color-text;
     -webkit-box-shadow: 0px 0px 1px $divider-color;
     -ms-box-shadow: 0px 0px 1px $divider-color;
 }
 
-input.ModificaProfiloInput{
-    height: 30px;
-    line-height: 30px;
+.MyContainer2{
+    height: 60px;
+    line-height: 60px;
+    width: 100%;
+    padding-right: 15px;
+}
+
+@mixin no_outline_green_box_shadow{
+    border: 1px 0px solid $primary-color;
+    &:focus{
+        outline: none;
+        -webkit-box-shadow: 0px 0px 5px $primary-color;
+        -ms-box-shadow: 0px 0px 5px $primary-color;
+    }
+    &:hover{
+        outline: none;
+        -webkit-box-shadow: 0px 0px 5px $primary-color;
+        -ms-box-shadow: 0px 0px 5px $primary-color;
+    }
+    &:active{
+        outline: none;
+        -webkit-box-shadow: 0px 0px 5px $primary-color;
+        -ms-box-shadow: 0px 0px 5px $primary-color;
+    }
+}
+
+
+#RankP, #RankM{
+    display: inline-block;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    background-color: $primary-color;
+    color: $primary-color-text;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 100px;
     border: none;
-    padding: 0px;
-    margin: 0px 0px;
+    margin-top: 10px;
+    padding : 0;
+    &#RankP{
+        margin-left: 1px;
+    }
+    &#RankM{
+        margin-right: 1px;
+    }
+    @include no_outline_green_box_shadow;
+}
+
+
+
+input.ModificaProfiloInput{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 5px;
+    margin: 5px 0px;
     text-transform: capitalize;
     font-size: 15px;
     letter-spacing: 1px;
+    @include no_outline_green_box_shadow;
 }
 
 input.Ranking1{
-    height: 60px;
-    line-height: 60px;
-    border: none;
-    padding: 0px;
+    min-height: 40px;
+    line-height: 40px;
+    padding-left: 5px;
     margin: 0px 0px;
     text-transform: capitalize;
     font-size: 15px;
     letter-spacing: 1px;
-}
-
-.Titolo1{
-    height: 30px;
-    line-height: 30px;
-    text-transform: capitalize;
-    font-size: 15px;
-    letter-spacing: 1px;
-    color: $primary-text-color;
+    display:inline-block;
+    width: 60%;
+    @include no_outline_green_box_shadow;
 }
 
 input.Esame1{
     min-height: 40px;
     line-height: 40px;    
     font-style: italic;
-    z-index: 0;
-    border: none;
-    padding: 0px;
-    margin: 0px 0px;
+    padding-left: 5px;
+    margin: 5px 0px;
     text-transform: capitalize;
     font-size: 15px;
     letter-spacing: 1px;
+    @include no_outline_green_box_shadow;
+
+}
+
+.Titolo1{
+    height: 40px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: $primary-text-color;
+    margin-bottom: 5px;
 }
 
 div .MyBtn{
@@ -115,19 +168,17 @@ div .MyBtn{
 
 }
 
-.Btn-newEsame{
-    height: 25px;
-    width: 25px;
+.Btn-addEsame{
+    height: 40px;
+    width: 40px;
     float: right;
     border: none;
-    border-radius: 15px;
-    margin-right: 15px;
+    border-radius: 20px;
     outline: none;
-    z-index: 10;
     text-align: center;
     color: $primary-color-text;
     background-color: $primary-color;
-    font-size: 15px;
+    font-size: 30px;
     display: block;
 }
 
